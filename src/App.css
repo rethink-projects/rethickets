@@ -15,25 +15,5 @@
   font-weight: 400;
 }
 
-.container-header{
-  display:flex;
-  background-color: var(--main-bg-color);
-  padding: 27px 0px 27px 84px; 
-  }
-
-  .acess-button{
-    font-family: var(--main-font);
-    padding-left: 900px;
-    cursor: pointer;
-    border: none;
-    background:none;
-    color: var(--main-text-color);
-    display: flex;
-   align-items: center;
-  }
-
-  .imgGroups{
-    display: inline-block;
-  }
 
 
