@@ -9,10 +9,12 @@ function Header (){
     return(
         <div className="container-header">
           <Logo />
-          <button className="acess-button" >
-            Acesssar 
-          <img className='imgGroup' src='./assets/Group_4.png' alt="Imagem do botao" />
+          <div className="button-and-img" >
+          <button className="acess-button"  >
+            Acessar 
+          <img width="32px" src='./assets/Group_4.png' alt="Imagem do botao" />
           </button>
+          </div>
         
         </div>
     )
