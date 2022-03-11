@@ -1,21 +1,25 @@
-.container-header{
-    display:flex;
-    background-color: var(--main-bg-color);
-    padding: 27px 0px 27px 84px; 
-    }
+   .container-header{
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--header-bg-color);
+   padding: 10px 20px;
+   }
   
     .acess-button{
-      font-family: var(--main-font);
-      padding-left: 900px;
-      cursor: pointer;
-      border: none;
-      background:none;
-      color: var(--main-text-color);
-      display: flex;
-     align-items: center;
+    font-family: var(--main-font);
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 105px;
     }
-  
-    .imgGroups{
-      display: inline-block;
+
+    .button-and-img:hover{
+      background-color: var(--header-bg-color);
+      width: 107px;
     }
-  
