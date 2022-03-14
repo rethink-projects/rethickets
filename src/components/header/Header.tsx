@@ -3,18 +3,21 @@ import { Logo } from "../../common/Logo";
 
 
 type HeaderProps = {
+  AcessButtonText: string;
 };
 
-function Header (){
+function Header ({AcessButtonText,}:HeaderProps){
     return(
         <div className="container-header">
           <Logo />
           <div className="button-and-img" >
           <button className="acess-button"  >
-            Acessar 
+            {AcessButtonText} 
           <img width="32px" src='./assets/Group_4.png' alt="Imagem do botao" />
           </button>
           </div>
+
+        
         
         </div>
     )

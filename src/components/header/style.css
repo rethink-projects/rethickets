@@ -9,6 +9,7 @@
   
     .acess-button{
     font-family: var(--main-font);
+    font-size: 15px;
     cursor: pointer;
     border: none;
     background: none;

@@ -1,0 +1,21 @@
+.list-title{
+    display: flex;
+     height: 30px;
+     width: 500px;
+     align-items:center;
+     justify-content: flex-start;
+     padding-left: 48px;
+     padding-bottom: 25px;
+     padding-top: 50px;
+  }
+
+  
+  .title-list{
+    color: var(--main-text-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+  }
+  
+  
+
+  
