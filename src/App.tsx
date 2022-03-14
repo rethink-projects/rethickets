@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/header/Header';
-import Main from './components/main/Main';
+import Home from './screen/home/Home';
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header AcessButtonText='Acessar'/>
-      <Main />
+      <Home />
 
     </div>
   )

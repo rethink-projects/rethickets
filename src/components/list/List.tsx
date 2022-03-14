@@ -2,20 +2,20 @@ import "./style.css";
 import ImgList from "../imgList/ImgList"
 
 type ListProps = {
-     ListText: string;
+     title: string;
 
 };
 
-function List({ListText,}:ListProps){
+function List({title,}:ListProps){
     return(
 
-        <div className='lists'>
+        <div className='list'>
 
-            <div className='list-title'>
+            <div className='title-container'>
 
                 <img className='calendarImg' src="./assets/calendar_white.png" alt="" />
-                <h1 className='title-list'>
-                    {ListText}
+                <h1 className='title'>
+                    {title}
                 </h1>
             </div>
 
