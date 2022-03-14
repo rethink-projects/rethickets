@@ -1,0 +1,44 @@
+.cont-form{
+  display: flex;
+   height: 100px;
+   align-items:center;
+}
+
+.form{
+  display: flex;
+   padding-left: 48px;
+   padding-top: 50px;
+   }
+
+.input{
+  background-color: var(--input-bg-color);
+  color: var(--main-text-color);
+  width: 600px;
+  height: 42px;
+  border-style: none;
+  border-radius: 10px 0px 0px 10px;
+  padding-left: 15px;
+}
+
+.placeholder{
+  color: var(--main-text-color);
+}
+
+.search{
+  height: 18px;
+}
+
+.searchButton{
+    border:none;
+    border-radius: 0px 10px 10px 0px;
+    background-color: var(--input-bg-color);
+    cursor: pointer;
+    height: 42px;
+    width: 50px;
+}
+
+input::placeholder {
+  color: var(--main-text-color);
+  font-size: 15px;
+  font-family: var(--main-font);
+}
