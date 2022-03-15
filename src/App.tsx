@@ -1,23 +1,18 @@
-import './App.css'
-import Header from './components/header/Header';
-import Home from './screen/home/Home';
+import "./App.css";
 
+// SCREENS
+import { HomeScreen } from "./screens";
 
-
-
+// COMPONENTS
+import { Header } from "./components";
 
 function App() {
-
-  
-
-
   return (
-    <div className="App">
-      <Header AcessButtonText='Acessar'/>
-      <Home />
-
+    <div>
+      <Header AcessButtonText='Acessar' />
+      <HomeScreen />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

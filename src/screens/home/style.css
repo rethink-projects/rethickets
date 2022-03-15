@@ -1,0 +1,14 @@
+.home-container {
+  display: flex;
+  background-color: var(--main-bg-color);
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+  padding: 10px 30px;
+}
+
+.events-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 60vh;
+}

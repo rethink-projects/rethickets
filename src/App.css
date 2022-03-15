@@ -1,16 +1,18 @@
 :root {
   --main-bg-color: #212529;
-  --header-bg-color:  #262e38;
+  --header-bg-color: #262e38;
   --main-text-color: #fff;
   --details-color: #d3f13a;
   --input-bg-color: rgba(255, 255, 255, 0.15);
-  --main-font: 'Roboto', sans-serif;
-
+  --main-font: "Roboto", sans-serif;
 }
 
-
-.title{
+.title {
   color: var(--main-bg-color);
   font-family: var(--main-font);
   font-weight: 400;
+}
+
+.svg-logo {
+  margin-left: -10px;
 }
