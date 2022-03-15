@@ -8,7 +8,7 @@ type FormProps = {
 function Props({placeholderText,}:FormProps){
     return(
 
-        <div className="cont-form">
+        <div className="container-form">
 <div className="form">
 <input
     type='search'

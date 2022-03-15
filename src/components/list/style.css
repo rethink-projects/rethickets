@@ -1,16 +1,18 @@
-.list-title{
+.list{
+  padding-top: 20px;
+}
+
+.title-container{
     display: flex;
      height: 30px;
      width: 500px;
      align-items:center;
      justify-content: flex-start;
-     padding-left: 48px;
-     padding-bottom: 25px;
-     padding-top: 50px;
+     padding-bottom: 15px;
   }
 
   
-  .title-list{
+  .title{
     color: var(--main-text-color);
     font-family: var(--main-font);
     font-size: 15px;

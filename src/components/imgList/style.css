@@ -4,9 +4,9 @@
     margin-right: 6px
   }
   
-  .cont-eventsImg{
+  .container-eventsImg{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 140px;
     width: 100%;
   }
