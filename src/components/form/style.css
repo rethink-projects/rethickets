@@ -1,6 +1,6 @@
 .container-form {
   display: flex;
-  height: 90px;
+  width: 60%;
   align-items: center;
+  margin: 20px 0;
 }
-

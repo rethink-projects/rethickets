@@ -15,20 +15,22 @@
 }
 
 .modal-container {
-  width: 0;
-  height: 100%;
+  position: relative;
   background: transparent;
-  padding: 20px;
 }
 
 .modal-container-open {
-  width: 400px;
+  position: relative;
+  width: 30%;
   height: 100%;
+  padding: 30px;
   background: var(--header-bg-color);
-  padding: 20px;
 }
 .modal-close-button {
   width: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 .modal-close-button img {
   width: 30px;

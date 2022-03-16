@@ -1,17 +1,21 @@
-import {Input} from "../index";
+import { Input } from "../index";
 import "./style.css";
-
 
 type FormProps = {
   placeholderText: string;
 };
 
-function Props({ placeholderText }: FormProps) {
+function Form({ placeholderText }: FormProps) {
   return (
     <div className='container-form'>
-     < Input placeholderText={placeholderText} localImg={'./assets/search_1.png'} typeInput={'search'}/>
+      <Input
+        iconCustomCss={{ width: "20px", height: "20px" }}
+        placeholder={placeholderText}
+        src={"./assets/search_1.png"}
+        type={"search"}
+      />
     </div>
   );
 }
 
-export default Props;
+export default Form;

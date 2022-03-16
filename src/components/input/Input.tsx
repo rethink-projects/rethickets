@@ -1,30 +1,41 @@
 import "./style.css";
 
 type InputProps = {
-  placeholderText: string;
-  localImg: File;
+  placeholder: string;
+  src: string;
   type: string;
+  hasIcon?: boolean;
+  iconCustomCss?: object;
+  inputCustomCss?: object;
+  containerCustomCss?: object;
 };
 
-function Input({ placeholderText, localImg, typeInput }: InputProps) {
+function Input({
+  placeholder,
+  src,
+  type,
+  hasIcon = true,
+  iconCustomCss = {},
+  inputCustomCss = {},
+  containerCustomCss = {},
+}: InputProps) {
   return (
-    <div className='container-input'>
+    <div className='container-input' style={containerCustomCss}>
       <input
-        type={typeInput}
+        type={type}
         name='search'
         className='input'
-        placeholder={placeholderText}
+        style={inputCustomCss}
+        placeholder={placeholder}
       />
-
-      <button className='searchButton'>
-       <div >
+      {hasIcon && (
         <img
-          className='imgButtom'
-          src={localImg}
+          style={iconCustomCss}
+          className='img-icon'
+          src={src}
           alt='searchImg'
-        ></img>
-        </div>
-      </button>
+        />
+      )}
     </div>
   );
 }

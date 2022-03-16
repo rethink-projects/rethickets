@@ -1,7 +1,21 @@
-export const Logo = () => {
+import "./styles.css";
+
+type LogoType = {
+  width?: string;
+  height?: string;
+  customCss?: object;
+};
+
+const Logo = ({
+  width = "100px",
+  height = "35px",
+  customCss = {},
+}: LogoType) => {
   return (
     <svg
-      className='svg-logo'
+      width={width}
+      height={height}
+      style={customCss}
       viewBox='0 0 178 46'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
@@ -50,3 +64,5 @@ export const Logo = () => {
     </svg>
   );
 };
+
+export default Logo;

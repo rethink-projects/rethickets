@@ -14,11 +14,6 @@
   font-weight: 400;
 }
 
-.svg-logo {
-  width: 100px;
-  height: 35px;
-}
-
 .Modal-container {
   display: flex;
   width: 100vw;
@@ -62,60 +57,3 @@
   cursor: pointer;
   margin-left: 13px;
 }
-
-.modal-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
-  width: 435px;
-  height: 280px;
-}
-
-.modal-body-text {
-  color: white;
-  font-size: 23px;
-  font-family: var(--main-font);
-  padding-left: 45px;
-}
-
-.modal-footer {
-  display: flex;
-  flex-direction: column;
-  width: 435px;
-  height: 470px;
-}
-
-.modal-form {
-  display: flex;
-  width: 435px;
-  height: 250px;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.modal-input {
-  background-color: var(--input-bg-color);
-  color: var(--main-text-color);
-  width: 350px;
-  height: 42px;
-  border-style: none;
-  border-radius: 10px 10px 10px 10px;
-  padding-left: 15px;
-  font-family: var(--main-font);
-}
-
-.modal-button-footer {
-  background-color: white;
-  color: black;
-  width: 350px;
-  height: 42px;
-  border-style: none;
-  border-radius: 10px 10px 10px 10px;
-  padding-left: 15px;
-  font-family: var(--main-font);
-  cursor: pointer;
-}
-

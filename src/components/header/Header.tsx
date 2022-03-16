@@ -1,6 +1,5 @@
 import "./style.css";
-import { Logo } from "../../common/Logo";
-import { useState } from "react";
+import { Logo } from "../../components";
 
 type HeaderProps = {
   AcessButtonText: string;
