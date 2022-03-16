@@ -21,7 +21,7 @@ function App() {
         isModalOpen={isModalOpen}
         toggleModal={() => toggleModal(!isModalOpen)}
       >
-        <LoginScreen />
+      <LoginScreen />
       </Modal>
       <HomeScreen />
     </div>

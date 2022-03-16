@@ -1,0 +1,42 @@
+.container-input {
+    display: flex;
+  }
+  
+  .input {
+    background-color: var(--input-bg-color);
+    color: var(--main-text-color);
+    width: 600px;
+    height: 42px;
+    border-style: none;
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 15px;
+    font-family: var(--main-font);
+  }
+  
+  .placeholder {
+    color: var(--main-text-color);
+  }
+  
+  .imgButtom {
+    height: 20px;
+  }
+  
+  .searchButton {
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    background-color: var(--input-bg-color);
+    cursor: pointer;
+    height: 42px;
+    width: 50px;
+  }
+  
+  textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+  input::placeholder {
+    color: var(--main-text-color);
+    font-size: 15px;
+    font-family: var(--main-font);
+  }

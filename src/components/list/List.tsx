@@ -1,5 +1,19 @@
 import "./style.css";
 import { faker } from "@faker-js/faker";
+import {useState} from "react";
+
+const Title = () =>{
+  
+  const [color, setColor] = useState("#D3F13A");
+  
+  const [img, setImg] = useState()
+  
+  const setStyle = (color, img) =>{
+    setColor(color);
+    setImg(img)
+  }
+}
+
 
 type ListProps = {
   title: string;

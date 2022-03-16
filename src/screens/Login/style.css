@@ -1,0 +1,45 @@
+.login-screen-content{
+    display: flex;
+    width: 440px;
+    height: 700px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body{
+    width: 440px;
+    height: 250px;
+}
+
+.modal-acess-button{
+    background-color: white;
+  color: black;
+  width: 380px;
+  height: 42px;
+  border-style: none;
+  border-radius: 10px 10px 10px 10px;
+  padding-left: 15px;
+  font-family: var(--main-font);
+  cursor: pointer;
+}
+
+.modal-footer-text {
+    color: white;
+    font-size: 16px;
+    font-family: var(--main-font);
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 100;
+
+  }
+
+  .container-input{
+    width: 380px;
+  }
+
+  .modal-body-text {
+    font-weight: 100;
+    font-size: 23px;
+  }
+  
+  
