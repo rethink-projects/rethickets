@@ -10,7 +10,11 @@ function HomeScreen() {
       <div className='events-container'>
         <List title='Principais Eventos na Rethink' />
         <List title='Eventos dos nossos Parceiros' />
-      </div>
+        <List title='Eventos da Área de TI' />
+        <List title='Eventos da Área de Design' />
+        <List title='Eventos da Área de Projetos' />
+        <List title='Eventos da Área de Marketing' />
+        </div>
     </div>
   );
 }

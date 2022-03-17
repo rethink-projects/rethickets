@@ -1,5 +1,5 @@
 import "./style.css";
-import { Logo } from "../../components";
+import { Logo } from "..";
 
 type HeaderProps = {
   AcessButtonText: string;
