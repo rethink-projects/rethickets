@@ -1,4 +1,4 @@
-import HomeScreen from "./home/HomeScreen";
+import HomeScreen from "./Home/HomeScreen";
 import LoginScreen from "./Login/LoginScreen";
 import Input from "../components/Input/Input";
 

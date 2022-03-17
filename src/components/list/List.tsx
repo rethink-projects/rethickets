@@ -6,10 +6,6 @@ type ListProps = {
   title: string;
 };
 
-function closeList(){
-  
-}
-
 function List({title}: ListProps){
   const [clicked, titleClicked] = useState(false);
 
@@ -27,16 +23,19 @@ const infos = {
     index: ""
   },
 };
+
+
   return (
     <div className='title-list'>
       <div className='title-container'>
         <img 
+        
         className='calendarImg' 
-        src={clicked ? infos.clicked.img : infos.default.img } 
-        alt='' 
+        src={clicked ? infos.clicked.img : infos.default.img} 
+        alt='Calendar Image' 
         />
         <h1 
-        onClick= {()=> titleClicked(!clicked)}
+        onClick= {() => titleClicked(!clicked)}
         className='list-title'
         style={{color: clicked ? infos.clicked.color : infos.default.color }}
         >
@@ -57,7 +56,7 @@ const infos = {
               key={index}
               className='event-container'
               style={{
-                height: clicked ? infos.clicked.height : infos.default.height
+                height: clicked ? infos.clicked.height : infos.default.height,
               }}
               >
                 <p className='event-title'>{item.title}</p>

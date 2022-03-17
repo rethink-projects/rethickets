@@ -12,7 +12,6 @@
   z-index: 50;
   display: flex;
   justify-content: flex-end;
-  
 }
 
 .modal-container {
@@ -20,9 +19,16 @@
   background: transparent;
 }
 
+.backgroud-modal{
+  display: flex;
+  position: relative;
+  background:transparent;
+  width: 100%;
+}
+
 .modal-container-open {
   position: relative;
-  width: 30%;
+  width: 40%;
   height: 100%;
   padding: 30px;
   background: var(--header-bg-color);

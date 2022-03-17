@@ -1,8 +1,10 @@
-import React from "react";
-import "./style.css";
+import React, { useState } from "react";
+import "./styles.css";
 import { Input, Logo } from "../../components";
 
 export default function LoginScreen() {
+
+  
   return (
     <div className='login-container'>
       <div className='login-header'>
@@ -24,7 +26,7 @@ export default function LoginScreen() {
           placeholder='Digite seu senha:'
           src='./assets/lock.png'
           type='password'
-          iconCustomCss={{ width: "15px", height: "15px" }}
+          iconCustomCss={{ width: "15px", height: "15px"  }}
         />
 
         <button className='modal-acess-button'>Acessar Plataforma</button>

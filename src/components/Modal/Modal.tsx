@@ -17,7 +17,8 @@ export default function Modal({
   let overlayClass = isModalOpen ? "modal-overlay-open" : "modal-overlay";
 
   return (
-    <div className={overlayClass}>
+    <div className={overlayClass} >
+      <div onClick={toggleModal} className='backgroud-modal'></div>
       <div className={containerClass}>
         <div onClick={toggleModal} className='modal-close-button'>
           <img src='./assets/close-button.png' alt='Fechar Modal' />
