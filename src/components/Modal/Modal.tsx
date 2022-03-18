@@ -18,7 +18,7 @@ export default function Modal({
 
   return (
     <div className={overlayClass} >
-      <div onClick={toggleModal} className='backgroud-modal'></div>
+      <div onClick={toggleModal} className='background-modal' />
       <div className={containerClass}>
         <div onClick={toggleModal} className='modal-close-button'>
           <img src='./assets/close-button.png' alt='Fechar Modal' />
