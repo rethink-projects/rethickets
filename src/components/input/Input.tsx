@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./styles.css";
 
 type InputProps = {
@@ -8,17 +9,22 @@ type InputProps = {
   iconCustomCss?: object;
   inputCustomCss?: object;
   containerCustomCss?: object;
+  clicked: boolean;
 };
 
 function Input({
   placeholder,
   src,
   type,
+  clicked,
   hasIcon = true,
   iconCustomCss = {},
   inputCustomCss = {},
   containerCustomCss = {},
 }: InputProps) {
+
+
+
   return (
     <div className='container-input' style={containerCustomCss}>
       <input
@@ -34,6 +40,7 @@ function Input({
           className='img-icon'
           src={src}
           alt='searchImg'
+          
         />
       )}
     </div>

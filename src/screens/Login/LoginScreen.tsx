@@ -2,9 +2,28 @@ import React, { useState } from "react";
 import "./styles.css";
 import { Input, Logo } from "../../components";
 
-export default function LoginScreen() {
 
+
+export default function LoginScreen() {
   
+  const[clicked, toggleClicked] = useState(false);
+
+  const setClick = () => {
+    toggleClicked(clicked => !clicked);
+  }
+
+  const infos = {
+    default: {
+      img: './assets/eye-off.png',
+      type:'password',
+    },
+    clicked: {
+      img:'./assets/eye.png',
+      type:'text'
+    }
+  }
+
+
   return (
     <div className='login-container'>
       <div className='login-header'>
@@ -18,16 +37,18 @@ export default function LoginScreen() {
           placeholder='Digite seu email:'
           src='./assets/user.png'
           type='email'
-          containerCustomCss={{ marginBottom: "15px" }}
-          iconCustomCss={{ width: "15px", height: "15px" }}
+          iconCustomCss={ { width: "15px", height: "15px" } }
+          containerCustomCss={ { marginBottom: "15px" } } clicked={ false }          
         />
+
         <Input
-          containerCustomCss={{ marginBottom: "20px" }}
+          containerCustomCss={ { marginBottom: "20px" } }
           placeholder='Digite seu senha:'
-          src='./assets/lock.png'
-          type='password'
-          iconCustomCss={{ width: "15px", height: "15px"  }}
-        />
+          onClick={setClick}
+          src={ clicked ? infos.clicked.img : infos.default.img }
+          type={ clicked ? infos.clicked.type : infos.default.type }
+          iconCustomCss={ { width: "15px", height: "15px" } } clicked={ false }          
+          />
 
         <button className='modal-acess-button'>Acessar Plataforma</button>
         <h1 className='modal-footer-text'>Esqueci minha senha</h1>
