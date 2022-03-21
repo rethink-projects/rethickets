@@ -7,8 +7,8 @@ type TitleType = {
   colorClicked: string;
   colorDefault: string;
   title: string;
-  id: number;
-  handleClick: (clicked: boolean, id:number) => void;
+  id: string;
+  handleClick: (clicked: boolean, id:string) => void;
 };
 
 const Title = ({

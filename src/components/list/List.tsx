@@ -6,8 +6,8 @@ import { Title } from "..";
 type ListProps = {
   title: string;
   isActive: boolean;
-  id:number;
-  handleClick: (isActive:boolean,id:number) => void;
+  id:string;
+  handleClick: (isActive:boolean,id:string) => void;
 };
 
 function List({ title,isActive,handleClick,id }: ListProps) {

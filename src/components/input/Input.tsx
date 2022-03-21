@@ -9,18 +9,18 @@ type InputProps = {
   iconCustomCss?: object;
   inputCustomCss?: object;
   containerCustomCss?: object;
-  clicked: boolean;
+  onClick?: () => void;
 };
 
 function Input({
   placeholder,
   src,
   type,
-  clicked,
   hasIcon = true,
   iconCustomCss = {},
   inputCustomCss = {},
   containerCustomCss = {},
+  onClick,
 }: InputProps) {
 
 
@@ -40,7 +40,7 @@ function Input({
           className='img-icon'
           src={src}
           alt='searchImg'
-          
+          onClick={onClick}
         />
       )}
     </div>

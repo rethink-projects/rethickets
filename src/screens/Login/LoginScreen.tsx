@@ -8,20 +8,20 @@ export default function LoginScreen() {
   
   const[clicked, toggleClicked] = useState(false);
 
-  const setClick = () => {
-    toggleClicked(clicked => !clicked);
+   const setClick = () => {
+     toggleClicked(clicked => !clicked);
   }
 
-  const infos = {
-    default: {
-      img: './assets/eye-off.png',
-      type:'password',
-    },
-    clicked: {
-      img:'./assets/eye.png',
-      type:'text'
-    }
-  }
+   const infos = {
+     default: {
+       img: './assets/eye-off.png',
+       type:'password',
+     },
+     clicked: {
+       img:'./assets/eye.png',
+       type:'text'
+     }
+   }
 
 
   return (
@@ -38,7 +38,7 @@ export default function LoginScreen() {
           src='./assets/user.png'
           type='email'
           iconCustomCss={ { width: "15px", height: "15px" } }
-          containerCustomCss={ { marginBottom: "15px" } } clicked={ false }          
+          containerCustomCss={ { marginBottom: "15px" } }      
         />
 
         <Input
@@ -47,7 +47,7 @@ export default function LoginScreen() {
           onClick={setClick}
           src={ clicked ? infos.clicked.img : infos.default.img }
           type={ clicked ? infos.clicked.type : infos.default.type }
-          iconCustomCss={ { width: "15px", height: "15px" } } clicked={ false }          
+          iconCustomCss={ { width: "15px", height: "15px" } }       
           />
 
         <button className='modal-acess-button'>Acessar Plataforma</button>
