@@ -12,6 +12,12 @@
   margin-bottom: 20px;
 }
 
+.event-title {
+  color: var(--header-bg-color);
+  font-family: var(--main-font);
+  font-size: 15px;
+  margin-left: 10px;
+}
 .list-title {
   color: var(--main-text-color);
   font-family: var(--main-font);
@@ -20,7 +26,6 @@
   font-weight: 400;
   cursor: pointer;
 }
-
 
 .list-container {
   display: flex;
@@ -34,10 +39,9 @@
   border-radius: 8px;
   margin-left: 15px;
   background-color: var(--main-text-color);
-  transition: height 0.3s
+  transition: all 0.3s ease-in-out;
 }
 
 .event-container:first-of-type {
   margin-left: 0;
 }
-

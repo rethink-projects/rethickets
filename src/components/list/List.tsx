@@ -1,18 +1,15 @@
 import "./styles.css";
 import { faker } from "@faker-js/faker";
-import { useState } from "react";
 import { Title } from "..";
 
 type ListProps = {
   title: string;
   isActive: boolean;
-  id:string;
-  handleClick: (isActive:boolean,id:string) => void;
+  id: string;
+  handleClick: (isActive: boolean, id: string) => void;
 };
 
-function List({ title,isActive,handleClick,id }: ListProps) {
-  
-
+function List({ title, isActive, handleClick, id }: ListProps) {
   const infos = {
     default: {
       img: "./assets/calendar_white.png",
@@ -43,7 +40,7 @@ function List({ title,isActive,handleClick,id }: ListProps) {
         {Array.from({ length: 4 })
           .map((_, index) => {
             return {
-              title: faker.definitions.title,
+              title: "Item" + index,
             };
           })
           .map((item, index) => {
@@ -52,7 +49,9 @@ function List({ title,isActive,handleClick,id }: ListProps) {
                 key={index}
                 className='event-container'
                 style={{
-                  height: isActive ? infos.clicked.height : infos.default.height,
+                  height: isActive
+                    ? infos.clicked.height
+                    : infos.default.height,
                 }}
               >
                 <p className='event-title'>{item.title}</p>

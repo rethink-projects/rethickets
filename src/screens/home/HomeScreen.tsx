@@ -1,13 +1,13 @@
 import "./style.css";
 import { Form, List } from "../../components/index";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { v4 as uuid } from "uuid";
 
 type ScreenHomeProps = {};
 type ListItemType = {
   title: string;
   isActive: boolean;
-  id:string;
+  id: string;
 };
 type ListTypes = ListItemType[];
 
@@ -17,13 +17,13 @@ const list = [
   { title: "Eventos da Área de TI", isActive: false, id: uuid() },
   { title: "Eventos da Área de Design", isActive: false, id: uuid() },
   { title: "Eventos da Área de Projetos", isActive: false, id: uuid() },
-  { title: "Eventos da Área de Marketing", isActive: false, id: uuid()},
+  { title: "Eventos da Área de Marketing", isActive: false, id: uuid() },
 ];
 
 function HomeScreen() {
   const [eventsList, setEventList] = useState<ListTypes>(list);
 
-  const handleClick = (isActive: boolean, id: string) => {
+  const handleClick = useCallback((isActive: boolean, id: string) => {
     const formattedList = eventsList.map((event: ListItemType) => {
       if (id === event.id) {
         return {
@@ -38,7 +38,8 @@ function HomeScreen() {
     });
 
     setEventList(formattedList);
-  };
+  }, []);
+
   return (
     <div className='home-container'>
       <Form placeholderText='Busque por Eventos, Palestras ou reuniões' />
