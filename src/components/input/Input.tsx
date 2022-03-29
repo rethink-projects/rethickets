@@ -10,6 +10,7 @@ type InputProps = {
   inputCustomCss?: object;
   containerCustomCss?: object;
   onClick?: () => void;
+  onChangeText?: () => void;
 };
 
 function Input({
@@ -21,10 +22,9 @@ function Input({
   inputCustomCss = {},
   containerCustomCss = {},
   onClick,
-}: InputProps) {
+}: // onChangeText,
 
-
-
+InputProps) {
   return (
     <div className='container-input' style={containerCustomCss}>
       <input
@@ -33,6 +33,8 @@ function Input({
         className='input'
         style={inputCustomCss}
         placeholder={placeholder}
+
+        // onChangeText={onChangeText}
       />
       {hasIcon && (
         <img

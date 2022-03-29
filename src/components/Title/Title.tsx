@@ -8,7 +8,7 @@ type TitleType = {
   colorDefault: string;
   title: string;
   id: string;
-  handleClick: (clicked: boolean, id:string) => void;
+  handleClick: (clicked: boolean, id: string) => void;
 };
 
 const Title = ({
@@ -18,6 +18,7 @@ const Title = ({
   imgClicked,
   imgDefault,
   title,
+
   handleClick,
   id,
 }: TitleType) => {
@@ -29,7 +30,7 @@ const Title = ({
         alt='Calendar Image'
       />
       <h1
-        onClick={() => handleClick(!clicked,id)}
+        onClick={() => handleClick(!clicked, id)}
         className='list-title'
         style={{ color: clicked ? colorClicked : colorDefault }}
       >

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Input } from "../index";
 import "./style.css";
 
@@ -6,6 +7,10 @@ type FormProps = {
 };
 
 function Form({ placeholderText }: FormProps) {
+  // function search(s){
+  //  setData(data.filter(d => d.title.includes(s)));
+  // }
+
   return (
     <div className='container-form'>
       <Input
@@ -13,6 +18,7 @@ function Form({ placeholderText }: FormProps) {
         placeholder={placeholderText}
         src={"./assets/search_1.png"}
         type={"search"}
+        // onChangeText={(s) => search(s)}
       />
     </div>
   );
