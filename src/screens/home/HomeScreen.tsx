@@ -23,41 +23,23 @@ type ListItemType = {
 };
 type ListTypes = ListItemType[];
 
-const listCategories = [
-  "Principais Eventos na Rethink",
-  "Principais eventos dos nossos Parceiros",
-  "Principais eventos da TI",
-  "Principais eventos do Designer",
-];
-
-const getAllEvents = (eventsList) => {
-  listCategories.forEach((category) => {
-    axios
-      .get(`http://localhost:3030/events?category=${category}`)
-      .then((response) => {
-        // console.log(response.data);
-        eventsList.push({
-          title: response.data.category,
-          isActive: false,
-          id: uuid(),
-          info: response.data.events,
-        });
-      });
-  });
-  // console.log(eventsList);
-  return eventsList;
-};
-
 function HomeScreen() {
-  const [eventsList, setEventList] = useState([]);
+  const [eventsList, setEventList] = useState<ListTypes>([]);
 
   useEffect(() => {
-    // console.log("getAllEvents(eventsList)");
-    // console.log(getAllEvents([]));
-    setEventList(getAllEvents([]));
-  }, []);
+    axios.get("http://localhost:3030/events").then((reponse: { data: any }) => {
+      setEventList([
+        {
+          title: "Principais Eventos na Rethink",
+          isActive: false,
+          id: uuid(),
+          data: reponse.data,
+        },
+      ]);
+    });
+  }, [0]);
 
-  const handleClick = (isActive: boolean, id: string) => {
+  const handleClick = useCallback((isActive: boolean, id: string) => {
     const formattedList =
       eventsList.length > 0
         ? eventsList.map((event: ListItemType) => {
@@ -76,32 +58,24 @@ function HomeScreen() {
         : [];
 
     setEventList(formattedList);
-  };
+  }, []);
 
   return (
     <div className='home-container'>
-      {console.log(eventsList)}
-      <Form placeholderText='Busque por Eventos, Palestras ou reunioes' />
+      <Form placeholderText='Busque por Eventos, Palestras ou reuniões' />
       <div className='events-container'>
-        {eventsList.length ??
-          eventsList.map((event) => {
-            console.log("event");
-            console.log(event);
-            return (
-              <h1>
-                {console.log({ log: event })}
-                ooo
-              </h1>
-              // <List
-              //   handleClick={handleClick}
-              //   key={event.id}
-              //   isActive={event.isActive}
-              //   title={event.title}
-              //   id={event.id}
-              //   data={event.info}
-              // />
-            );
-          })}
+        {eventsList.map((event) => {
+          return (
+            <List
+              handleClick={handleClick}
+              key={event.id}
+              isActive={event.isActive}
+              title={event.title}
+              id={event.id}
+              data={event.data}
+            />
+          );
+        })}
       </div>
     </div>
   );
