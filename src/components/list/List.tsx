@@ -9,7 +9,7 @@ type ListProps = {
   isActive: boolean;
   id: string;
   data: EventsData[];
-  handleClick: (isActive: boolean, id: string) => void;
+  handleClick?: (isActive: boolean, id: string) => void;
 };
 
 type EventsData = {
@@ -20,7 +20,7 @@ type EventsData = {
   eventDate: String;
 };
 
-function List({ title, isActive, handleClick, id, data }: ListProps) {
+function List({ handleClick, title, isActive, id, data }: ListProps) {
   const infos = {
     default: {
       img: "./assets/calendar_white.png",
@@ -50,46 +50,49 @@ function List({ title, isActive, handleClick, id, data }: ListProps) {
       />
 
       <div className='list-container'>
-        {data.map((item, index) => {
-          return (
-            <div
-              key={index}
-              className='event-container'
-              style={{
-                height: isActive ? infos.clicked.height : infos.default.height,
-              }}
-            >
-              <div className='event-title-container'>
-                <p className='event-title'>{item.name}</p>
-              </div>
-              <div className='event-img'></div>
+        {data.length &&
+          data.map((item, index) => {
+            return (
               <div
+                key={index}
+                className='event-container'
                 style={{
-                  color: isActive
-                    ? infos.clicked.textColor
-                    : infos.default.textColor,
+                  height: isActive
+                    ? infos.clicked.height
+                    : infos.default.height,
                 }}
-                className='description-event-container'
               >
-                <p style={{ display: isActive ? "flex" : "none" }}>
-                  {item.resume}
-                </p>
+                <div className='event-title-container'>
+                  <p className='event-title'>{item.name}</p>
+                </div>
+                <div className='event-img'></div>
                 <div
                   style={{
                     color: isActive
                       ? infos.clicked.textColor
                       : infos.default.textColor,
-                    display: isActive ? "flex" : "none",
                   }}
-                  className='event-footer'
+                  className='description-event-container'
                 >
-                  <p>type</p>
-                  <p> {item.eventDate}</p>
+                  <p style={{ display: isActive ? "flex" : "none" }}>
+                    {item.resume}
+                  </p>
+                  <div
+                    style={{
+                      color: isActive
+                        ? infos.clicked.textColor
+                        : infos.default.textColor,
+                      display: isActive ? "flex" : "none",
+                    }}
+                    className='event-footer'
+                  >
+                    <p>type</p>
+                    <p> {item.eventDate}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );
