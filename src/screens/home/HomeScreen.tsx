@@ -1,6 +1,6 @@
 import "./style.css";
 import { Form, List } from "../../components/index";
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 import { indexEventsServices } from "../../services/eventsServices";
 import axios from "axios";
@@ -22,28 +22,42 @@ type ListItemType = {
   data: EventsData[];
 };
 type ListTypes = ListItemType[];
+const getAllEvents = async (set: React.SetStateAction<any>) => {
+  const categories = [
+    "Principais Eventos na Rethink",
+    "Principais eventos dos nossos Parceiros",
+    "Principais eventos da TI",
+    "Principais eventos do Designer",
+  ];
+
+  const response = categories.map(async (item) => {
+    return {
+      title: item,
+      isActive: false,
+      id: uuid(),
+
+      data: (await axios.get(`http://localhost:3030/events?category=${item}`))
+        .data.events,
+    };
+  });
+
+  console.log(await Promise.all(response));
+  set(await Promise.all(response));
+};
+
+const category = "Principais Eventos na Rethink";
 
 function HomeScreen() {
   const [eventsList, setEventList] = useState<ListTypes>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3030/events").then((reponse: { data: any }) => {
-      setEventList([
-        {
-          title: "Principais Eventos na Rethink",
-          isActive: false,
-          id: uuid(),
-          data: reponse.data,
-        },
-      ]);
-    });
+    getAllEvents(setEventList);
   }, [0]);
 
-  const handleClick = useCallback((isActive: boolean, id: string) => {
+  const handleClick = (isActive: boolean, id: string) => {
     const formattedList =
       eventsList.length > 0
         ? eventsList.map((event: ListItemType) => {
-            console.log(id, event.id);
             if (id === event.id) {
               return {
                 ...event,
@@ -56,14 +70,13 @@ function HomeScreen() {
             };
           })
         : [];
-
     setEventList(formattedList);
-  }, []);
+  };
 
   return (
-    <div className='home-container'>
-      <Form placeholderText='Busque por Eventos, Palestras ou reuniões' />
-      <div className='events-container'>
+    <div className="home-container">
+      <Form placeholderText="Busque por Eventos, Palestras ou reuniões" />
+      <div className="events-container">
         {eventsList.map((event) => {
           return (
             <List

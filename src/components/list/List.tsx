@@ -21,6 +21,7 @@ type EventsData = {
 };
 
 function List({ title, isActive, handleClick, id, data }: ListProps) {
+  console.log({ isActive, data });
   const infos = {
     default: {
       img: "./assets/calendar_white.png",
@@ -37,7 +38,7 @@ function List({ title, isActive, handleClick, id, data }: ListProps) {
   };
 
   return (
-    <div className='title-list'>
+    <div className="title-list">
       <Title
         clicked={isActive}
         colorClicked={infos.clicked.color}
@@ -49,27 +50,27 @@ function List({ title, isActive, handleClick, id, data }: ListProps) {
         handleClick={handleClick}
       />
 
-      <div className='list-container'>
+      <div className="list-container">
         {data.map((item, index) => {
           return (
             <div
               key={index}
-              className='event-container'
+              className="event-container"
               style={{
                 height: isActive ? infos.clicked.height : infos.default.height,
               }}
             >
-              <div className='event-title-container'>
-                <p className='event-title'>{item.name}</p>
+              <div className="event-title-container">
+                <p className="event-title">{item.name}</p>
               </div>
-              <div className='event-img'></div>
+              <div className="event-img"></div>
               <div
                 style={{
                   color: isActive
                     ? infos.clicked.textColor
                     : infos.default.textColor,
                 }}
-                className='description-event-container'
+                className="description-event-container"
               >
                 <p style={{ display: isActive ? "flex" : "none" }}>
                   {item.resume}
@@ -81,7 +82,7 @@ function List({ title, isActive, handleClick, id, data }: ListProps) {
                       : infos.default.textColor,
                     display: isActive ? "flex" : "none",
                   }}
-                  className='event-footer'
+                  className="event-footer"
                 >
                   <p>type</p>
                   <p> {item.eventDate}</p>

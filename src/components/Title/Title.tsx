@@ -18,20 +18,19 @@ const Title = ({
   imgClicked,
   imgDefault,
   title,
-
   handleClick,
   id,
 }: TitleType) => {
   return (
-    <div className='title-container'>
+    <div className="title-container">
       <img
-        className='calendarImg'
+        className="calendarImg"
         src={clicked ? imgClicked : imgDefault}
-        alt='Calendar Image'
+        alt="Calendar Image"
       />
       <h1
         onClick={() => handleClick(!clicked, id)}
-        className='list-title'
+        className="list-title"
         style={{ color: clicked ? colorClicked : colorDefault }}
       >
         {title}
