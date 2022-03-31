@@ -74,9 +74,10 @@ function HomeScreen() {
   };
 
   return (
-    <div className="home-container">
-      <Form placeholderText="Busque por Eventos, Palestras ou reuniões" />
-      <div className="events-container">
+    <div className='home-container'>
+      <Form placeholderText='Busque por Eventos, Palestras ou reuniões' />
+      <div></div>
+      <div className='events-container'>
         {eventsList.map((event) => {
           return (
             <List

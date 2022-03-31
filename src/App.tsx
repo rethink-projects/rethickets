@@ -23,6 +23,7 @@ function App() {
         <LoginScreen />
       </Modal>
       <HomeScreen />
+      {/* <EventScreen /> */}
     </div>
   );
 }

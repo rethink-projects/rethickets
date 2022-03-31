@@ -2,7 +2,7 @@ import "./styles.css";
 import { faker } from "@faker-js/faker";
 import { Title } from "..";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 type ListProps = {
   title: string;
@@ -21,6 +21,9 @@ type EventsData = {
 };
 
 function List({ title, isActive, handleClick, id, data }: ListProps) {
+  // const overlayEl = useRef<HTMLDivElement>(null);
+
+  const carousel = useRef<HTMLDivElement>(null);
   console.log({ isActive, data });
   const infos = {
     default: {
@@ -37,8 +40,23 @@ function List({ title, isActive, handleClick, id, data }: ListProps) {
     },
   };
 
+  const handleLeftClick = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
+    if (carousel.current !== null) {
+      carousel.current.scrollLeft -= carousel.current.offsetWidth;
+    }
+  };
+
+  const handleRightClick = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (carousel.current !== null) {
+      carousel.current.scrollLeft += carousel.current.offsetWidth;
+    }
+  };
+
   return (
-    <div className="title-list">
+    <div className='title-list'>
       <Title
         clicked={isActive}
         colorClicked={infos.clicked.color}
@@ -50,27 +68,32 @@ function List({ title, isActive, handleClick, id, data }: ListProps) {
         handleClick={handleClick}
       />
 
-      <div className="list-container">
+      <div className='list-container-carrosel' ref={carousel}>
         {data.map((item, index) => {
+          console.log(item);
           return (
             <div
               key={index}
-              className="event-container"
+              className='event-container'
               style={{
                 height: isActive ? infos.clicked.height : infos.default.height,
               }}
             >
-              <div className="event-title-container">
-                <p className="event-title">{item.name}</p>
+              <div className='event-title-container'>
+                <p className='event-title'>{item.name}</p>
               </div>
-              <div className="event-img"></div>
+              <img
+                className='event-img'
+                src={item.eventImageSmall.toString()}
+                alt=''
+              />
               <div
                 style={{
                   color: isActive
                     ? infos.clicked.textColor
                     : infos.default.textColor,
                 }}
-                className="description-event-container"
+                className='description-event-container'
               >
                 <p style={{ display: isActive ? "flex" : "none" }}>
                   {item.resume}
@@ -82,7 +105,7 @@ function List({ title, isActive, handleClick, id, data }: ListProps) {
                       : infos.default.textColor,
                     display: isActive ? "flex" : "none",
                   }}
-                  className="event-footer"
+                  className='event-footer'
                 >
                   <p>type</p>
                   <p> {item.eventDate}</p>
@@ -91,6 +114,14 @@ function List({ title, isActive, handleClick, id, data }: ListProps) {
             </div>
           );
         })}
+      </div>
+      <div className='buttonCarroselConteiner'>
+        <button onClick={handleLeftClick} className='buttonCarrosel'>
+          <img src='./assets/chevron-left.png' alt='scrollLeft' />
+        </button>
+        <button onClick={handleRightClick} className='buttonCarrosel'>
+          <img src='./assets/chevron-right.png' alt='scrollRight' />
+        </button>
       </div>
     </div>
   );
